@@ -1,0 +1,15 @@
+
+{% extends 'homepage.html' %}
+
+{% block content %}
+<center>
+<h2>Wybierz zestaw</h2>
+
+    {% for b in box_list %}
+    {% if user == b.author %}
+        <h3>🗃 <a href="{% url 'card' pk=b.boxs.first.id %}">{{ b.box_name }}</a></h3>
+
+    {% endif %}
+    {% endfor %}
+</center>
+{% endblock content %}

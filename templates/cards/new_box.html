@@ -1,0 +1,15 @@
+{% extends "homepage.html" %}
+
+{% block content %}
+<center>
+    <h2>🗃 Stwórz nowy zestaw</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Card">
+    </form>
+    <a href="{% url 'card_list' %}">
+        Cancel
+    </a>
+    </center>
+{% endblock %}

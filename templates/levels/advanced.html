@@ -1,0 +1,17 @@
+{% extends 'homepage.html' %}
+
+<button data-bs-toggle="collapse" data-bs-target="#demo">Collapsible</button>
+{% block content %}
+<center>
+<div class="container mt-3">
+  <h2><span1 class="border border-5">{{ advanced1 }}</span1></h2>
+
+  <a href="{% url 'basic' %}" class="btn btn-primary">Następny</a>
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="collapse" data-bs-target="#demo">Sprawdź</button>
+  <div id="demo" class="collapse">
+    <h2><span1 class="border border-5">{{ advanced2 }}</span1></h2>
+  </div>
+
+  </div>
+      </center>
+{% endblock %}

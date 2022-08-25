@@ -1,0 +1,28 @@
+{% extends 'homepage.html' %}
+<button data-bs-toggle="collapse" data-bs-target="#demo">Collapsible</button>
+{% block content %}
+<center><h2>Sprawdź się!</h2></center>
+    <ul class="pagination justify-content-center">
+{% for n in card_list %}
+
+  <li class="page-item"><a class="page-link" href="{% url 'card' pk=n.id %}">{{ n.id }}</a></li>
+
+{% endfor %}
+
+    </ul>
+<center>
+<div class="container mt-3">
+  <h2><span1 class="border border-5"><a href="{% url 'answer' pk=card.pk %}">{{ card.question }}</a></span1></h2>
+  {% if card_list.count > 1 %}
+    <button type="button" class="btn btn-outline-danger"><a href="{% url 'delete' pk=card.id %}">Już umiem!</a></button>
+  {% else %}
+  <button type="button" class="btn btn-outline-danger" disabled>Już umiem!</button>
+  {% endif %}
+
+
+
+  </div>
+
+</center>
+
+{% endblock content %}

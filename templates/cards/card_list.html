@@ -1,0 +1,16 @@
+
+{% extends 'homepage.html' %}
+{% load humanize %}
+{% block content %}
+<center>
+    {% for card in card_list %}
+    {% if user == card.box.author %}
+    {% ifchanged %}
+    <h3>🗃 {{ card.box }} <a href="{% url 'box_delete' pk=card.box.id %}">usuń</a> </h3>
+    {% endifchanged %}
+
+    {% include "includes/card.html" %}
+{% endif %}
+    {% endfor %}
+</center>
+{% endblock content %}

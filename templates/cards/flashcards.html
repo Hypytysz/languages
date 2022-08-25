@@ -1,0 +1,16 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+<h2>Wybierz zestaw</h2>
+
+
+
+
+        <h3>🗃 {{ boxs.question }} {{ boxs.id }}-{{ boxs.box_id }}</h3>
+<ul class="pagination">
+{% for n in rest %}
+{{ n.id }} - {{ n.box_id }} - {{ n.question }}
+  <li class="page-item"><a class="page-link" href="{% url 'card' pk=n.id %}">Next</a></li>
+{% endfor %}
+    </ul>
+{% endblock content %}

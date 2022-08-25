@@ -1,0 +1,17 @@
+{% extends 'homepage.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<center><h1>Edytuj fiszkę</h1></center>
+<form method = "POST">
+
+    {% csrf_token %}
+    <center>
+    {{ edit_form | crispy }}
+        <input type="submit" value="send">
+    <div class = "menu" style="position:relative; left: 600px;">
+            <a href="{% url 'card_list' %}">Powrót</a>
+        </div>
+
+           </center>
+</form>
+{% endblock %}
